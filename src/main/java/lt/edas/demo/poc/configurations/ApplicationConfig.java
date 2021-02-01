@@ -1,4 +1,4 @@
-package lt.edas.demo.poc.rest.configurations;
+package lt.edas.demo.poc.configurations;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
