@@ -1,15 +1,14 @@
 package lt.edas.demo.poc.services.interfaces;
 
-import lt.edas.demo.poc.rest.dto.PersonDto;
 import lt.edas.demo.poc.rest.dto.request.CreatePersonRequest;
-
-import java.util.List;
+import lt.edas.demo.poc.rest.dto.request.UpdatePersonRequest;
+import lt.edas.demo.poc.rest.dto.response.SearchResponse;
 
 public interface PersonService {
 
-    void createPerson(CreatePersonRequest request);
+    Long createPerson(CreatePersonRequest request);
 
-    List<PersonDto> getPersons();
+    SearchResponse getPersons(String searchParam);
 
-    void updatePerson(PersonDto object);
+    void updatePerson(UpdatePersonRequest object);
 }

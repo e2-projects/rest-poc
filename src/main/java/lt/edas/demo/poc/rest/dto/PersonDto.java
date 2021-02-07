@@ -17,4 +17,5 @@ public class PersonDto {
     private String surname;
     private String address;
     private List<ContactDto> contacts;
+
 }

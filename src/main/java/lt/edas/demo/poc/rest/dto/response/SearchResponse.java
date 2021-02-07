@@ -13,4 +13,5 @@ import lt.edas.demo.poc.rest.dto.PersonDto;
 public class SearchResponse {
 
     private Iterable<PersonDto> persons;
+
 }

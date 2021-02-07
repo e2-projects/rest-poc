@@ -2,6 +2,7 @@ package lt.edas.demo.poc.rest.controllers;
 
 import lombok.RequiredArgsConstructor;
 import lt.edas.demo.poc.rest.dto.request.CreatePersonRequest;
+import lt.edas.demo.poc.rest.dto.request.UpdatePersonRequest;
 import lt.edas.demo.poc.rest.dto.response.SearchResponse;
 import lt.edas.demo.poc.services.interfaces.PersonService;
 import org.slf4j.Logger;
@@ -22,18 +23,18 @@ public class AppController implements AppMapping {
     }
 
     @Override
-    public void createPerson(CreatePersonRequest request) {
-        service.createPerson(request);
+    public Long createPerson(CreatePersonRequest request) {
+        return service.createPerson(request);
     }
 
     @Override
-    public SearchResponse getPersons() {
-        return null;
+    public SearchResponse getPersons(String nameContext) {
+        return service.getPersons(nameContext);
     }
 
     @Override
-    public void updatePerson(Object request) {
-
+    public void updatePerson(UpdatePersonRequest request) {
+        service.updatePerson(request);
     }
 
 }

@@ -18,7 +18,6 @@
 		<java.version>11</java.version>
 		<swagger.version>3.0.0</swagger.version>
 		<hibernate-validator.version>6.1.7.Final</hibernate-validator.version>
-		<model-mapper.version>2.3.9</model-mapper.version>
 	</properties>
 
 	<dependencies>
@@ -81,12 +80,6 @@
 			<artifactId>hibernate-validator</artifactId>
 			<version>${hibernate-validator.version}</version>
 		</dependency>
-
-<!--		<dependency>-->
-<!--			<groupId>org.modelmapper</groupId>-->
-<!--			<artifactId>modelmapper</artifactId>-->
-<!--			<version>${model-mapper.version}</version>-->
-<!--		</dependency>-->
 
 
 		<!-- TEST -->
