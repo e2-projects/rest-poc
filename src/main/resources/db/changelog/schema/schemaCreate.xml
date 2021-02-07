@@ -7,6 +7,24 @@
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
     <changeSet id="1" author="Edvardas Jusius">
+        <comment>Create person contacts table</comment>
+
+        <createSequence sequenceName="seq_contact_id" incrementBy="1" startValue="1"/>
+
+        <createTable tableName="contact">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" primaryKeyName="pk_contact"/>
+            </column>
+            <column name="phone" type="varchar(20)"/>
+            <column name="email" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addDefaultValue columnDataType="bigint" columnName="id" defaultValueSequenceNext="seq_contact_id" tableName="contact"/>
+    </changeSet>
+
+    <changeSet id="2" author="Edvardas Jusius">
         <comment>Create person table</comment>
 
         <createSequence sequenceName="seq_person_id" incrementBy="1" startValue="1"/>
@@ -22,30 +40,13 @@
                 <constraints nullable="false"/>
             </column>
             <column name="address" type="varchar(150)"/>
+
+            <column name="contact_id" type="bigint">
+                <constraints nullable="false" foreignKeyName="fk_contact_to_person" references="contact(id)"/>
+            </column>
         </createTable>
 
         <addDefaultValue columnDataType="bigint" columnName="id" defaultValueSequenceNext="seq_person_id" tableName="person"/>
-    </changeSet>
-
-    <changeSet id="2" author="Edvardas Jusius">
-        <comment>Create person contacts table</comment>
-
-        <createSequence sequenceName="seq_contact_id" incrementBy="1" startValue="1"/>
-
-        <createTable tableName="contact">
-            <column name="id" type="bigint">
-                <constraints primaryKey="true" primaryKeyName="pk_contact"/>
-            </column>
-            <column name="person_id" type="bigint">
-                <constraints nullable="false" foreignKeyName="fk_contact_to_person" references="person(id)"/>
-            </column>
-            <column name="phone" type="varchar(20)"/>
-            <column name="email" type="varchar(50)">
-                <constraints nullable="false"/>
-            </column>
-        </createTable>
-
-        <addDefaultValue columnDataType="bigint" columnName="id" defaultValueSequenceNext="seq_contact_id" tableName="contact"/>
     </changeSet>
 
 </databaseChangeLog>

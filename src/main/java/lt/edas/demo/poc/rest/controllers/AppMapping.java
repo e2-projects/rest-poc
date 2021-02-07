@@ -1,5 +1,7 @@
 package lt.edas.demo.poc.rest.controllers;
 
+import lt.edas.demo.poc.rest.dto.request.CreatePersonRequest;
+import lt.edas.demo.poc.rest.dto.response.SearchResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,11 +19,11 @@ public interface AppMapping {
     void ping(HttpServletRequest request);
 
     @PostMapping(PERSON)
-    void createPerson();
+    void createPerson(CreatePersonRequest request);
 
     @GetMapping(PERSON)
-    void getPerson();
+    SearchResponse getPersons();
 
     @PutMapping(PERSON)
-    void updatePerson();
+    void updatePerson(Object request);
 }
