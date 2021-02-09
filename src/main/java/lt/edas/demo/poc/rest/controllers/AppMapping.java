@@ -39,7 +39,7 @@ public interface AppMapping {
 
     @GetMapping(PERSON)
     @ApiOperation(
-            value = "Update person parameters",
+            value = "Search person",
             notes = "<b>Search person by name or surname.</b><br>" +
                     "<b>Default param: \"\"</b>" +
                     "<b>Returns:</b> Object with list of people"

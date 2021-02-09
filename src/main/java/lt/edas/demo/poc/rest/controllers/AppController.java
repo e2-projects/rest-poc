@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import lt.edas.demo.poc.rest.dto.request.CreatePersonRequest;
 import lt.edas.demo.poc.rest.dto.request.UpdatePersonRequest;
 import lt.edas.demo.poc.rest.dto.response.SearchResponse;
-import lt.edas.demo.poc.services.interfaces.PersonService;
+import lt.edas.demo.poc.services.person.PersonService;
 import org.slf4j.Logger;
 import org.springframework.stereotype.Controller;
 
