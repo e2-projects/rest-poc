@@ -71,4 +71,19 @@ class PersonServiceImplTest extends Specification {
             result.getPersons().size() == 0
     }
 
+    def "Should update person"() {
+        given: "update request and entity and updated entity"
+            def request = TestObjects.getUpdatePersonRequest()
+            def entity = TestObjects.getPersonEntity()
+            def updatedEntity = TestObjects.getUpdatedPersonEntity()
+        when: "updating person"
+            service.updatePerson(request)
+        then: "fetch person entity by id"
+            1 * personRepository.getOne(TestConstants.PERSON_ID_1) >> entity
+        and: "map update request with person entity"
+            1 * mapperService.convertToPerson(entity, request) >> updatedEntity
+        and: "updated entity saved to database"
+            1 * personRepository.save(updatedEntity)
+    }
+
 }

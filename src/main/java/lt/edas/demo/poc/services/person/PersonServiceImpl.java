@@ -6,6 +6,7 @@ import lt.edas.demo.poc.rest.dto.request.CreatePersonRequest;
 import lt.edas.demo.poc.rest.dto.request.UpdatePersonRequest;
 import lt.edas.demo.poc.rest.dto.response.SearchResponse;
 import lt.edas.demo.poc.services.mapper.MapperService;
+import org.slf4j.Logger;
 import org.springframework.stereotype.Service;
 
 import java.util.Collections;
@@ -35,7 +36,9 @@ class PersonServiceImpl implements PersonService {
 
     @Override
     public void updatePerson(UpdatePersonRequest request) {
-
+        var person = repository.getOne(request.getId());
+        var updatedPerson = mapper.convertToPerson(person, request);
+        repository.save(updatedPerson);
     }
 
 }

@@ -11,7 +11,7 @@ import java.util.List;
 public interface MapperService {
 
     Person convertToPerson(CreatePersonRequest request);
-    Person convertToPerson(UpdatePersonRequest request);
+    Person convertToPerson(Person current, UpdatePersonRequest request);
     Contact convertToContact(String phone, String email);
     PersonDto convertToDto(Person person);
     Iterable<PersonDto> convertToDtoList(List<Person> persons);

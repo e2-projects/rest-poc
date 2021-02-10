@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 
 @RestController()
 @RequestMapping()
-public interface AppMapping {
+interface AppMapping {
 
     String PING = "/ping";
     String PERSON = "/person";
@@ -32,10 +32,7 @@ public interface AppMapping {
                     "</ul>" +
                     "<b>Returns:</b> ID"
             )
-    Long createPerson(
-            @RequestBody
-            CreatePersonRequest request
-    );
+    Long createPerson(@RequestBody CreatePersonRequest request);
 
     @GetMapping(PERSON)
     @ApiOperation(
@@ -60,5 +57,5 @@ public interface AppMapping {
                     "</ul>" +
                     "<b>Returns:</b> id"
     )
-    void updatePerson(UpdatePersonRequest request);
+    void updatePerson(@RequestBody UpdatePersonRequest request);
 }

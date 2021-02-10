@@ -1,14 +1,12 @@
 package lt.edas.demo.poc.rest.dto.request;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
+import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 import javax.validation.constraints.Size;
 
 @Data
+@ToString
 @SuperBuilder
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
