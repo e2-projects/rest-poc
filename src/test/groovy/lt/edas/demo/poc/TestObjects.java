@@ -20,6 +20,13 @@ public class TestObjects {
         );
     }
 
+    public static Person getUpdatedPersonEntity() {
+        return buildPersonEntity(
+                PERSON_ID_1, PERSON_NAME_2, PERSON_SURNAME_1,
+                PERSON_ADDRESS_2, PERSON_PHONE_1, PERSON_EMAIL_2
+        );
+    }
+
     public static List<Person> getPersonEntityList() {
         return Arrays.asList(
                 buildPersonEntity(

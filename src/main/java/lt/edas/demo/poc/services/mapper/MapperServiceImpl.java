@@ -41,12 +41,23 @@ class MapperServiceImpl implements MapperService {
     }
 
     @Override
-    public Person convertToPerson(UpdatePersonRequest request) {
+    public Person convertToPerson(Person person, UpdatePersonRequest request) {
         try {
             checkObject(request, UpdatePersonRequest.class);
-            return null;
+            checkObject(person, Person.class);
+            if (hasValue(request.getName()))
+                person.setName(request.getName());
+            if (hasValue(request.getSurname()))
+                person.setSurname(request.getSurname());
+            if (hasValue(request.getAddress()))
+                person.setAddress(request.getAddress());
+            if (hasValue(request.getPhone()))
+                person.getContact().setPhone(request.getPhone());
+            if (hasValue(request.getEmail()))
+                person.getContact().setEmail(request.getEmail());
+            return person;
         } catch (MapperException e) {
-            return null;
+            return person;
         }
     }
 
@@ -95,5 +106,9 @@ class MapperServiceImpl implements MapperService {
             logger.error("{} list is null or empty.", listItemClass.getName());
             throw new MapperException();
         }
+    }
+
+    private boolean hasValue(String value) {
+        return value != null && !value.isBlank();
     }
 }

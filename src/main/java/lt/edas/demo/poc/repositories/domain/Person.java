@@ -8,6 +8,7 @@ import javax.persistence.*;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode(exclude = "contact")
 @Entity
 @Table(name = "person")
 public class Person {
@@ -36,4 +37,5 @@ public class Person {
         this.contact = contact;
         return this;
     }
+
 }
