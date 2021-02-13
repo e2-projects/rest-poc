@@ -3,6 +3,7 @@ package lt.edas.demo.poc.services.mapper
 import lt.edas.demo.poc.TestConstants
 import lt.edas.demo.poc.TestObjects
 import lt.edas.demo.poc.repositories.domain.Person
+import lt.edas.demo.poc.rest.dto.PersonDto
 import lt.edas.demo.poc.rest.dto.request.CreatePersonRequest
 import lt.edas.demo.poc.rest.dto.request.UpdatePersonRequest
 import org.slf4j.Logger
@@ -173,6 +174,74 @@ class MapperServiceImplTest extends Specification {
             1 * logger.error("{} object is null", Person.getName())
         and: "entity is null"
             person == fetched
+    }
+
+    def "Should create Contact entity"() {
+        given: "phone and email"
+            def phone = TestConstants.PERSON_PHONE_1
+            def email = TestConstants.PERSON_EMAIL_1
+        when: "converting params to entity"
+            def contact = service.convertToContact(phone, email)
+        then: "phone and email is set to Contact entity"
+            contact.getPhone() == phone
+            contact.getEmail() == email
+    }
+
+    def "Should convert Person entity to data object"() {
+        given: "Person entity"
+            def person = TestObjects.getPersonEntity()
+        when: "converting entity to data object"
+            def result = service.convertToDto(person)
+        then: "person name and surname is set to data object"
+            result.getName() == person.getName()
+            result.getSurname() == person.getSurname()
+    }
+
+    def "Should return null when Person entity is null"() {
+        given: "Person entity"
+            def person = null
+        when: "converting entity to data object"
+            def result = service.convertToDto(person)
+        then: "error is logged"
+            1 * logger.error("{} object is null", Person.getName())
+        and: "entity is null"
+            result == null
+    }
+
+    def "Should convert Person entities list to data objects list"() {
+        given: "Person entities list"
+            def list = TestObjects.getPersonEntityList()
+        when: "converting list"
+            def result = service.convertToDtoList(list)
+        then: "list is converted"
+            result.toList().get(0).getName() == list.get(0).getName()
+            result.toList().get(0).getSurname() == list.get(0).getSurname()
+            result.toList().get(1).getName() == list.get(1).getName()
+            result.toList().get(1).getSurname() == list.get(1).getSurname()
+            result.toList().get(2).getName() == list.get(2).getName()
+            result.toList().get(2).getSurname() == list.get(2).getSurname()
+    }
+
+    def "Should return empty list when entities list is empty"() {
+        given: "Person entities list"
+            def list = Collections.emptyList()
+        when: "converting list"
+            def result = service.convertToDtoList(list as List<Person>)
+        then: "error message is logged"
+            1 * logger.error("{} list is null or empty.", Person.getName())
+        and: "result is empty list"
+            result == Collections.emptyList()
+    }
+
+    def "Should return empty list when entities list is with null objects"() {
+        given: "Person entities list"
+            def list = Arrays.asList(null, null)
+        when: "converting list"
+            def result = service.convertToDtoList(list as List<Person>)
+        then: "error message is logged for objects"
+            2 * logger.error("{} object is null", Person.getName())
+        and: "result is list of null objects"
+            result == list as Iterable<PersonDto>
     }
 
 }
