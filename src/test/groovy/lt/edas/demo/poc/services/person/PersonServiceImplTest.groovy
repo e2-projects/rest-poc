@@ -11,7 +11,7 @@ import spock.lang.Specification
 class PersonServiceImplTest extends Specification {
 
     @Subject
-    private PersonServiceImpl service
+    private PersonService service
     private PersonRepository personRepository = Mock()
     private MapperService mapperService = Mock()
 
