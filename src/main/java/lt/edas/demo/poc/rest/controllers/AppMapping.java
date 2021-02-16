@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 
-@RestController()
-@RequestMapping()
+@RestController
+@RequestMapping
 interface AppMapping {
 
     String PING = "/ping";

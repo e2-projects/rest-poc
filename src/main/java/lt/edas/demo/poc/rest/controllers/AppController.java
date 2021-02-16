@@ -6,11 +6,11 @@ import lt.edas.demo.poc.rest.dto.request.UpdatePersonRequest;
 import lt.edas.demo.poc.rest.dto.response.SearchResponse;
 import lt.edas.demo.poc.services.person.PersonService;
 import org.slf4j.Logger;
-import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 
-@Controller
+@RestController
 @RequiredArgsConstructor
 public class AppController implements AppMapping {
 
