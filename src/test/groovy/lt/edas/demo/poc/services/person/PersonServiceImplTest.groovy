@@ -1,7 +1,7 @@
 package lt.edas.demo.poc.services.person
 
-import lt.edas.demo.poc.TestConstants
 import lt.edas.demo.poc.TestObjects
+import lt.edas.demo.poc.TestConstants
 import lt.edas.demo.poc.repositories.PersonRepository
 import lt.edas.demo.poc.repositories.domain.Person
 import lt.edas.demo.poc.services.mapper.MapperService

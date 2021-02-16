@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>lt.edas.demo</groupId>
-	<artifactId>poc</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>poc</name>
+	<artifactId>rest-poc</artifactId>
+	<version>0.1.0</version>
+	<name>rest-poc</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -101,6 +101,13 @@
 		<dependency>
 			<groupId>org.spockframework</groupId>
 			<artifactId>spock-core</artifactId>
+			<version>${spock.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.spockframework</groupId>
+			<artifactId>spock-spring</artifactId>
 			<version>${spock.version}</version>
 			<scope>test</scope>
 		</dependency>
