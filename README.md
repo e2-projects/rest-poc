@@ -14,3 +14,11 @@ Initial REST application to fast start with new projects.
 3. Set Project SDK to Java 11
 4. Build project `mvn clean install`
 5. Run application `mvn spring-boot:start`
+---
+##Local environment
+* [Swagger](http://localhost:8081/demo/api/v1/swagger-ui/#/)
+* [Database console](http://localhost:8081/demo/api/v1/h2-console)
+```textmate
+http://localhost:8081/demo/api/v1/ping    (GET)
+http://localhost:8081/demo/api/v1/person  (POST/PUT/GET)
+```
