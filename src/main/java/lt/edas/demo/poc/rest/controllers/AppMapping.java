@@ -18,7 +18,7 @@ interface AppMapping {
 
     @GetMapping(PING)
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    void ping(HttpServletRequest request);
+    void ping();
 
     @PostMapping(PERSON)
     @ApiOperation(

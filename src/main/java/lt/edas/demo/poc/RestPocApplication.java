@@ -6,10 +6,10 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 
 @ServletComponentScan
 @SpringBootApplication
-public class PocApplication {
+public class RestPocApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PocApplication.class, args);
+		SpringApplication.run(RestPocApplication.class, args);
 	}
 
 }

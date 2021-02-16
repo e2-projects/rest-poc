@@ -19,6 +19,6 @@ Initial REST application to fast start with new projects.
 * [Swagger](http://localhost:8081/demo/api/v1/swagger-ui/#/)
 * [Database console](http://localhost:8081/demo/api/v1/h2-console)
 ```textmate
-http://localhost:8081/demo/api/v1/ping    (GET)
-http://localhost:8081/demo/api/v1/person  (POST/PUT/GET)
+http://localhost:8081/rest/api/v1/ping    (GET)
+http://localhost:8081/rest/api/v1/person  (POST/PUT/GET)
 ```
