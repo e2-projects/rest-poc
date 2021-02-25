@@ -1,8 +1,8 @@
 
-name: Java CI
+name: Build
 
 on:
-  pull_request:
+  push:
     branches: [ dev ]
 
   workflow_dispatch:
