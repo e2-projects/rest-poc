@@ -1,3 +1,5 @@
+[![Build](https://github.com/e2-projects/rest-poc/actions/workflows/action-build.yml/badge.svg)](https://github.com/e2-projects/rest-poc/actions/workflows/action-build.yml)
+
 # REST POC
 ## Description
 Initial REST application to fast start with new projects.
