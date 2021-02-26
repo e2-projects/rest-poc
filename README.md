@@ -1,4 +1,5 @@
 [![Build](https://github.com/e2-projects/rest-poc/actions/workflows/action-build.yml/badge.svg?branch=dev)](https://github.com/e2-projects/rest-poc/actions/workflows/action-build.yml)
+[![Tests](https://github.com/e2-projects/rest-poc/actions/workflows/action-test.yml/badge.svg?branch=dev)](https://github.com/e2-projects/rest-poc/actions/workflows/action-test.yml)
 
 # REST POC
 ## Description
