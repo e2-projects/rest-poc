@@ -6,7 +6,6 @@ import lt.edas.demo.poc.rest.dto.request.CreatePersonRequest;
 import lt.edas.demo.poc.rest.dto.request.UpdatePersonRequest;
 import lt.edas.demo.poc.rest.dto.response.SearchResponse;
 import lt.edas.demo.poc.services.mapper.MapperService;
-import org.slf4j.Logger;
 import org.springframework.stereotype.Service;
 
 import java.util.Collections;

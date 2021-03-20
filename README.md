@@ -21,6 +21,12 @@ Initial REST application to fast start with new projects.
 ## Local environment
 * [Swagger](http://localhost:8081/demo/api/v1/swagger-ui/#/)
 * [Database console](http://localhost:8081/demo/api/v1/h2-console)
+#### LDAP Security:
+```textmate
+Username: bob
+Password: bobspassword
+```
+#### Endpoints
 ```textmate
 http://localhost:8081/demo/api/v1/ping    (GET)
 http://localhost:8081/demo/api/v1/person  (POST/PUT/GET)
