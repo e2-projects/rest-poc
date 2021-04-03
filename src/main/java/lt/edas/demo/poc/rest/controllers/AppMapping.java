@@ -5,6 +5,7 @@ import lt.edas.demo.poc.rest.dto.request.CreatePersonRequest;
 import lt.edas.demo.poc.rest.dto.request.UpdatePersonRequest;
 import lt.edas.demo.poc.rest.dto.response.SearchResponse;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -29,8 +30,10 @@ interface AppMapping {
                     "<li>Name</li>" +
                     "<li>Surname</li>" +
                     "<li>Email</li>" +
-                    "</ul>" +
-                    "<b>Returns:</b> ID"
+                    "</ul><br>" +
+                    "<b>Returns:</b> ID",
+            consumes = MediaType.APPLICATION_JSON_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE
             )
     Long createPerson(@RequestBody CreatePersonRequest request);
 
@@ -39,7 +42,9 @@ interface AppMapping {
             value = "Search person",
             notes = "<b>Search person by name or surname.</b><br>" +
                     "<b>Default param: \"\"</b>" +
-                    "<b>Returns:</b> Object with list of people"
+                    "<b>Returns:</b> Object with list of people",
+            consumes = MediaType.APPLICATION_JSON_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE
     )
     SearchResponse getPersons(
             @RequestParam(defaultValue = "")
@@ -47,7 +52,6 @@ interface AppMapping {
     );
 
     @PutMapping(PERSON)
-
     @ApiOperation(
             value = "Update person parameters",
             notes = "<b>Update created person by ID.</b><br>" +
@@ -55,7 +59,9 @@ interface AppMapping {
                     "<ul>" +
                     "<li>ID</li>" +
                     "</ul>" +
-                    "<b>Returns:</b> id"
+                    "<b>Returns:</b> id",
+            consumes = MediaType.APPLICATION_JSON_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE
     )
     void updatePerson(@RequestBody UpdatePersonRequest request);
 }
