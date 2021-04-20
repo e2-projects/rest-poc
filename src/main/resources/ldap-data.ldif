@@ -1,0 +1,71 @@
+dn: dc=e2business,dc=lt
+objectclass: top
+objectclass: domain
+objectclass: extensibleObject
+dc: e2business
+
+dn: ou=groups,dc=e2business,dc=lt
+objectclass: top
+objectclass: organizationalUnit
+ou: groups
+
+dn: ou=people,dc=e2business,dc=lt
+objectclass: top
+objectclass: organizationalUnit
+ou: people
+
+dn: ou=members,ou=groups,dc=e2business,dc=lt
+objectclass: top
+objectclass: organizationalUnit
+ou: members
+
+dn: ou=admins,dc=e2business,dc=lt
+objectclass: top
+objectclass: organizationalUnit
+ou: admins
+
+dn: uid=ben,ou=people,dc=e2business,dc=lt
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Ben Alex
+sn: Alex
+uid: ben
+userPassword: $2y$12$.08ioev8EGvdguZQ63PgcONfqflfdQ6GCPD3616dUZDbgmr.w.Y.a
+
+dn: uid=bob,ou=people,dc=e2business,dc=lt
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Bob Hamilton
+sn: Hamilton
+uid: bob
+userPassword: $2y$12$EYl//VGZ1DCqZQdbWmkiYek1S8i30Q0OEkylMi6WfEGfHdURO0r8K
+
+dn: uid=joe,ou=people,dc=e2business,dc=lt
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Joe Smeth
+sn: Smeth
+uid: joe
+userPassword: $2y$12$sHC.adiGFU/f4L7LTv3lz.kSEWxS2rfwoM1uKpc1n7Ni/CycZN1Wq
+
+dn: cn=members,ou=groups,dc=e2business,dc=lt
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: members
+ou: member
+uniqueMember: uid=ben,ou=people,dc=e2business,dc=lt
+uniqueMember: uid=bob,ou=people,dc=e2business,dc=lt
+uniqueMember: uid=joe,ou=people,dc=e2business,dc=lt
+
+dn: cn=admins,ou=groups,dc=e2business,dc=lt
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: admins
+ou: admin
+uniqueMember: uid=ben,ou=people,dc=e2business,dc=lt

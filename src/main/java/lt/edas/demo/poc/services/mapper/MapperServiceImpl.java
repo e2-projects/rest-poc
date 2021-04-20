@@ -94,14 +94,14 @@ class MapperServiceImpl implements MapperService {
         }
     }
 
-    private void checkObject(Object object, Class objectClass) {
+    private void checkObject(Object object, Class<?> objectClass) {
         if (object == null) {
             logger.error("{} object is null", objectClass.getName());
             throw new MapperException();
         }
     }
 
-    private void checkObjectList(List list, Class listItemClass) {
+    private void checkObjectList(List<?> list, Class<?> listItemClass) {
         if (list == null || list.isEmpty()) {
             logger.error("{} list is null or empty.", listItemClass.getName());
             throw new MapperException();

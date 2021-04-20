@@ -1,6 +1,6 @@
-package lt.edas.demo.poc;
+package lt.edas.demo.poc
 
-public class TestConstants {
+class TestConstants {
 
     public static final Long PERSON_ID_1 = 1L;
     public static final String PERSON_NAME_1 = "Jason";
